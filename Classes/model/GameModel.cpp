@@ -28,7 +28,16 @@ bool GameModel::init() {
 }
 
 void GameModel::update(float d) {
+  _ball->update(d);
+  _stick->update(d);
+  _target->update(d);
 
+  // ball collides with stick
+  if ( (_ball->_x > _stick->_x - _stick->_width / 2)
+        && (_ball->_x < _stick->_x + _stick->_width / 2)
+        && (abs(_ball->_y - _stick->_y) <= _ball->_width / 2)) {
+    _ball->bounceUpOrDown();
+  }
 }
 
 void GameModel::createObjects() {

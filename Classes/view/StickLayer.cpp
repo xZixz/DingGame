@@ -10,6 +10,7 @@
 bool StickLayer::init() {
   if (Layer::init()) {
     _stickSprite = Sprite::create("stick.png");
+    _stickSprite->setPosition(225, 170);
     addChild(_stickSprite);
 
     return true;

@@ -18,6 +18,9 @@ void Stick::update(float d) {
 }
 
 bool Stick::init() {
+  _width = 200;
+  _x = 225;
+  _y = 170;
   return true;
 }
 

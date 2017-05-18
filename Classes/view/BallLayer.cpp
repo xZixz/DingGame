@@ -6,10 +6,12 @@
  */
 
 #include "BallLayer.h"
+#include "../model/GameModel.h"
 
 bool BallLayer::init() {
   if (Layer::init()) {
     _ballSprite = Sprite::create("ball.png");
+    _ballSprite->setPosition(225, 200);
     addChild(_ballSprite);
     return true;
   }
@@ -18,6 +20,8 @@ bool BallLayer::init() {
 
 void BallLayer::update(float d) {
   // TODO
+  GameModel* model = GameModel::getInstance();
+  _ballSprite->setPosition(model->_ball->_x, model->_ball->_y);
 }
 
 BallLayer::BallLayer() {

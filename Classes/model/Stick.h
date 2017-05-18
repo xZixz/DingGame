@@ -19,6 +19,10 @@ class Stick {
 
   Stick();
   virtual ~Stick();
+
+  float _width;
+  float _x;
+  float _y;
 };
 
 #endif /* MODEL_STICK_H_ */

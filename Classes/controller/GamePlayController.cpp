@@ -18,7 +18,6 @@ GamePlayController* GamePlayController::create() {
 bool GamePlayController::init() {
 
   if (Scene::init()) {
-
     // Init view
     GamePlayView* view = GamePlayView::createWithDelegate(this);
     this->_view = view;

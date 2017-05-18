@@ -14,14 +14,23 @@ class Ball : public Updateable {
   public:
 
   static Ball* create();
+
   virtual bool init();
   virtual void update(float d);
+  bool atEdge();
+  void bounceEdge();
+  bool atTopOrBottom();
+  void bounceUpOrDown();
 
   Ball();
   virtual ~Ball();
 
   float _velocityX;
   float _velocityY;
+  float _x;
+  float _y;
+  float _width;
+  float _height;
 
 };
 
