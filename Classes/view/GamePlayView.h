@@ -13,22 +13,20 @@
 #include "BallLayer.h"
 #include "StickLayer.h"
 #include "HudLayer.h"
-#include "../interface/GameViewDelegate.h"
+
 USING_NS_CC;
 
 class GamePlayView :  public Updateable {
   public:
 
-  static GamePlayView* createWithDelegate(GameViewDelegate* delegate);
-  virtual bool init();
-  virtual void setDelegate(GameViewDelegate* delegate);
+  static GamePlayView* createWithScene(Scene* scene);
+  virtual bool initWithScene(Scene* scene);
   virtual void update(float);
 
   GamePlayView();
   virtual ~GamePlayView();
 
   private:
-  GameViewDelegate* _delegate;
   BallLayer* _ballLayer;
   StickLayer* _stickLayer;
   HudLayer* _hudLayer;

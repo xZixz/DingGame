@@ -20,6 +20,8 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				   ../../Classes/view/GamePlayView.cpp\
 				   ../../Classes/view/HudLayer.cpp\
 				   ../../Classes/view/StickLayer.cpp\
+				   ../../Classes/view/UserInputLayer.cpp\
+				   ../../Classes/view/GameScene.cpp\
                    ../../Classes/AppDelegate.cpp \
                    ../../Classes/HelloWorldScene.cpp
 

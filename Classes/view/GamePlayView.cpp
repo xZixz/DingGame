@@ -8,14 +8,13 @@
 #include "GamePlayView.h"
 #include "../model/GameModel.h"
 
-GamePlayView* GamePlayView::createWithDelegate(GameViewDelegate* delegate) {
+GamePlayView* GamePlayView::createWithScene(Scene* scene) {
   GamePlayView* gamePlayView = new GamePlayView();
-  gamePlayView->setDelegate(delegate);
-  gamePlayView->init();
+  gamePlayView->initWithScene(scene);
   return gamePlayView;
 }
 
-bool GamePlayView::init() {
+bool GamePlayView::initWithScene(Scene* scene) {
 
   GameModel* model = GameModel::getInstance();
 
@@ -23,9 +22,9 @@ bool GamePlayView::init() {
   _stickLayer = StickLayer::create();
   _hudLayer = HudLayer::create();
 
-  _delegate->addView(_ballLayer);
-  _delegate->addView(_stickLayer);
-  _delegate->addView(_hudLayer);
+  scene->addChild(_ballLayer);
+  scene->addChild(_stickLayer);
+  scene->addChild(_hudLayer);
 
   return true;
 }
@@ -35,10 +34,6 @@ void GamePlayView::update(float d) {
   _ballLayer->update(d);
   _stickLayer->update(d);
   _hudLayer->update(d);
-}
-
-void GamePlayView::setDelegate(GameViewDelegate* delegate) {
-  this->_delegate = delegate;
 }
 
 GamePlayView::GamePlayView() {
