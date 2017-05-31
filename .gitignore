@@ -24,6 +24,8 @@ proj.android/.externalToolBuilders
 
 proj.android/local.properties
 
+proj.android/project.properties
+
 proj.android/lint.xml
 
 *~
